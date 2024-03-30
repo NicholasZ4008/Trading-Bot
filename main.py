@@ -2,6 +2,7 @@ from web_scraper import getting_data, DataFrame_formatting
 from noise_filtering import LOESS_smoothing, Kalman_filtering
 from yahoofinance import getting_gaining_stocks
 from indicator import indicator_for_setup
+from predictions import predictor
 import matplotlib.pyplot as plt
 def main():
     values_list = getting_data()
@@ -15,5 +16,6 @@ def main():
     plt.clf()
     getting_gaining_stocks()
     indicator_for_setup()
+    predictor()
 if __name__=='__main__':
     main()

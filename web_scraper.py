@@ -90,8 +90,3 @@ def DataFrame_formatting(values_list):
     print(stock_df.head())
     print(stock_df.info())
     
-    
-# extract transform and load
-# values_list = getting_data()
-# stock_df=DataFrame_formatting(values_list)
-# stock_df.to_csv('dataset.csv', index=False)
