@@ -33,4 +33,4 @@ def indicator_for_setup():
     # Sort the dataframe by 'Symbol' and 'Date'
     yearly_historic_df.sort_values(by=['Symbol', 'Date'], inplace=True)
     
-    yearly_historic_df.to_csv('test.csv')
+    yearly_historic_df.to_csv('raw_yearly_yahoo_finance.csv')
