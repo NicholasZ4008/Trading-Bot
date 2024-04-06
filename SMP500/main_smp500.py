@@ -1,7 +1,7 @@
 from web_scraper_SMP500 import scrape, format_raw
 #from yahoofinance import getting_gaining_stocks
-from indicator_smp500 import indicator_for_setup
-from smp500_decision import decisions
+from indicator_smp500 import indicator_for_setup, 
+from smp500_decision import decisions, moving_average_plot
 from model import model_analysis
 
 def main():
@@ -11,6 +11,7 @@ def main():
     indicator_for_setup()
     decisions()
     model_analysis()
+    moving_average_plot()
     
     
     

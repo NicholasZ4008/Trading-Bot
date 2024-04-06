@@ -25,7 +25,6 @@ def model_analysis():
         pipeline.fit(X_train, y_train)
         y_pred = pipeline.predict(X_valid)
         print(f"Accuracy of {pipeline.steps[-1][1].__class__.__name__}: {accuracy_score(y_valid, y_pred):.2f}")
-
-model_analysis()
      
+
 

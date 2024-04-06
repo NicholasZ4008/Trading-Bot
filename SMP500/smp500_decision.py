@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib.dates as mdates
+import matplotlib as plt
 
 def decisions():
     # Load your dataframe containing historic stock data
@@ -28,4 +30,27 @@ def decisions():
 
     # Save the updated dataframe
     gaining_stocks_df.to_csv('decisions.csv', index=False)
+
+def moving_average_plot():
+    
+    decisions = pd.read_csv("decisions.csv")
+
+    # Assuming 'Date' column is in the format 'YYYY-MM-DD'
+    decisions.csv['Date'] = pd.to_datetime(decisions['Date'])
+
+    # Plotting for a specific stock symbol, e.g., 'AAPL'
+    aapl_df = decisions[decisions['Symbol'] == 'AAPL']
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(aapl_df['Date'], aapl_df['Close'], label='Closing Price')
+    plt.plot(aapl_df['Date'], aapl_df['200_MA'], label='200-Day Moving Average')
+    plt.xlabel('Date')
+    plt.ylabel('Price')
+    plt.title('Stock Price and 200-Day Moving Average for AAPL')
+    plt.legend()
+    plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))
+    plt.gca().xaxis.set_major_locator(mdates.MonthLocator(interval=3))
+    plt.gcf().autofmt_xdate()  # Rotation
+    plt.show()
+
 
