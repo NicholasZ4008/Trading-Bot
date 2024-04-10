@@ -6,10 +6,26 @@ from bs4 import BeautifulSoup as bs
 import pandas as pd
 import time
 
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
+
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+chrome_options.add_argument('--disable-gpu')  # Optional, for some headless environments
+chrome_options.add_argument('--remote-debugging-port=9222')  # Optional, for debugging
+
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+
+
+
 def scrape():
     values_list = []
-    #setup Selenium driver
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+    # Use the global driver instance
+    global driver
     driver.get("https://www.slickcharts.com/sp500")
     time.sleep(5) 
     
@@ -27,8 +43,8 @@ def scrape():
             row_values.append(new_value)
         values_list.append(row_values)
     
-    driver.quit()
-    return(values_list)
+    return values_list
+
 
 def format_raw(raw):
     index = []
