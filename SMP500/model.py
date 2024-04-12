@@ -20,7 +20,7 @@ def model_analysis():
     dt_pipeline = make_pipeline(StandardScaler(), DecisionTreeClassifier())
     nn_pipeline = make_pipeline(StandardScaler(), MLPClassifier(max_iter=1000))
 
-    pipelines = [rf_pipeline, dt_pipeline]
+    pipelines = [rf_pipeline, dt_pipeline,nn_pipeline]
     for pipeline in pipelines:
         pipeline.fit(X_train, y_train)
         y_pred = pipeline.predict(X_valid)
@@ -28,7 +28,7 @@ def model_analysis():
         train_score=pipeline.score(X_train,y_train)
         valid_score=pipeline.score(X_valid,y_valid)
         print("Train Score: ",train_score,'\n')
-        print("Validation Score: ",train_score,'\n')
+        print("Validation Score: ",valid_score,'\n')
     
 
 
