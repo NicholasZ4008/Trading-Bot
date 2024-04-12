@@ -12,7 +12,6 @@ def indicator_for_setup():
     Date_array=[]
     Symbol_array=[]
     Closing_array=[]
-    historic_df=pd.DataFrame({'historic_data':[]})
 
     for symbol in gaining_stocks_df['stock_symbol']:
         stock = yf.Ticker(symbol)
@@ -58,7 +57,9 @@ def indicator_for_setup():
     top_stocks_ema['50_EMA'] = top_stocks_ema.groupby('Symbol')['Close'].transform(lambda x: x.ewm(span=50).mean())
 
     # Generate buy and sell signals. Based off EMA crossover
+    # indicates bullish trend reversal, start buying
     top_stocks_ema['Buy_Signal'] = (top_stocks_ema['Close'] > top_stocks_ema['50_EMA']) & (top_stocks_ema['Close'].shift(1) < top_stocks_ema['50_EMA'].shift(1))
+    # indicates bearish trend reversal, start selling
     top_stocks_ema['Sell_Signal'] = (top_stocks_ema['Close'] < top_stocks_ema['50_EMA']) & (top_stocks_ema['Close'].shift(1) > top_stocks_ema['50_EMA'].shift(1))
 
     # Identify support and resistance levels

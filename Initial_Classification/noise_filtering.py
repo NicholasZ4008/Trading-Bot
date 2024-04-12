@@ -7,8 +7,8 @@ import numpy as np
 # perform LOESS Smoothing for price changes via (highest price reached before closing)-(starting day price). See what the common trend is.
 # However, we want the financial instruments/stocks that lie above this linear line, beating the average, a strong positive outlier. 
 # We also want to produce Loess smoothing for volume traded and see if we can find stocks with high volume of trading, and see if we can match them on the results of the previous LOESS
-# see if we can match high volume traded stocks with high profit stocks
-# for volume traded, only get the stocks that have had a positive percent change, that means stocks probably going up, so a good volume ratio, more buyers, so it means we should buy
+# see if we can match high volume traded stocks with high profit stocks, this will show if theres a correlation with price value and the volume being traded
+# for volume traded, only get the stocks that have had a positive percent change, that means stocks probably going up, so a good volume ratio
 
 def LOESS_smoothing(dataset):
     df = pd.read_csv(dataset)   
