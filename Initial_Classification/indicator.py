@@ -1,90 +1,59 @@
 import yfinance as yf
 import pandas as pd
 import time
+
 def indicator_for_setup():
-    start_time=time.time()
-    gaining_stocks_df=pd.read_csv('gaining_stocks.csv')
-    symbol_array=[]
-    Open_array=[]
-    High_array=[]
-    Low_array=[]
-    Volume_array=[]
-    Date_array=[]
-    Symbol_array=[]
-    Closing_array=[]
+    start_time = time.time()
+    gaining_stocks_df = pd.read_csv('gaining_stocks.csv')
+
+    symbol_array = []
+    open_array = []
+    high_array = []
+    low_array = []
+    volume_array = []
+    date_array = []
+    closing_array = []
 
     for symbol in gaining_stocks_df['stock_symbol']:
         stock = yf.Ticker(symbol)
         history_one_year = stock.history(period='1y')
         for index, row in history_one_year.iterrows():
-            Date_array.append(index)
-            Open_array.append(row['Open'])
-            High_array.append(row['High'])
-            Low_array.append(row['Low'])
-            Volume_array.append(row['Volume'])
-            Symbol_array.append(symbol)
-            Closing_array.append(row['Close'])
+            date_array.append(index)
+            open_array.append(row['Open'])
+            high_array.append(row['High'])
+            low_array.append(row['Low'])
+            volume_array.append(row['Volume'])
+            symbol_array.append(symbol)
+            closing_array.append(row['Close'])
 
-    yearly_historic_df=pd.DataFrame({'Symbol': Symbol_array,'Date': Date_array, 'Open': Open_array, 'Close':Closing_array, 'High':High_array, 'Low':Low_array,'Volume': Volume_array})
-
-    yearly_historic_df['Date'] = pd.to_datetime(yearly_historic_df['Date'])
-
-    # Sort the dataframe by 'Symbol' and 'Date'
-    yearly_historic_df.sort_values(by=['Symbol', 'Date'], inplace=True)
-
-    yearly_historic_df['Return'] = yearly_historic_df.groupby('Symbol')['Close'].transform(lambda x: x.pct_change().add(1).cumprod())
-    # Calculate the standard deviation of the daily returns (volatility)
-    yearly_historic_df['Return_pct'] = yearly_historic_df.groupby('Symbol')['Close'].pct_change()
-    yearly_historic_df['Volatility'] = yearly_historic_df.groupby('Symbol')['Return_pct'].transform(lambda x: x.rolling(window=50).std())
-
-    # Calculate the average volume
-    yearly_historic_df['Avg_Volume'] = yearly_historic_df.groupby('Symbol')['Volume'].transform(lambda x: x.rolling(window=50).mean())
-    # Get the final rate of return for each stock
-    final_returns = yearly_historic_df.groupby('Symbol')['Return'].last()
-    final_avg_volume = yearly_historic_df.groupby('Symbol')['Avg_Volume'].last()
-    final_volatility = yearly_historic_df.groupby('Symbol')['Volatility'].last()
-    stock_stats = pd.DataFrame({
-        'Return': final_returns,
-        'Avg_Volume': final_avg_volume,
-        'Volatility': final_volatility
+    yearly_historic_df = pd.DataFrame({
+        'Symbol': symbol_array,
+        'Date': date_array,
+        'Open': open_array,
+        'Close': closing_array,
+        'High': high_array,
+        'Low': low_array,
+        'Volume': volume_array
     })
-    top_stocks = stock_stats.sort_values(by=['Return', 'Avg_Volume', 'Volatility'], ascending=[False, False, True]).head(3)
 
-    top_symbols = top_stocks.index
-
-    # Calculate the 50-day EMA (Exponential Moving Average) only for the top stocks
-    top_stocks_ema = yearly_historic_df[yearly_historic_df['Symbol'].isin(top_symbols)].copy()
-    top_stocks_ema['50_EMA'] = top_stocks_ema.groupby('Symbol')['Close'].transform(lambda x: x.ewm(span=50).mean())
-
-    # Generate buy and sell signals. Based off EMA crossover
-    # indicates bullish trend reversal, start buying
-    top_stocks_ema['Buy_Signal'] = (top_stocks_ema['Close'] > top_stocks_ema['50_EMA']) & (top_stocks_ema['Close'].shift(1) < top_stocks_ema['50_EMA'].shift(1))
-    # indicates bearish trend reversal, start selling
-    top_stocks_ema['Sell_Signal'] = (top_stocks_ema['Close'] < top_stocks_ema['50_EMA']) & (top_stocks_ema['Close'].shift(1) > top_stocks_ema['50_EMA'].shift(1))
-
-    # Identify support and resistance levels
-    top_stocks_ema['Support_Level'] = top_stocks_ema.groupby('Symbol')['Low'].transform(lambda x: x.rolling(window=50).min())
-    top_stocks_ema['Resistance_Level'] = top_stocks_ema.groupby('Symbol')['High'].transform(lambda x: x.rolling(window=50).max())
-
-    buy_signals = top_stocks_ema[top_stocks_ema['Buy_Signal']]
-    sell_signals = top_stocks_ema[top_stocks_ema['Sell_Signal']]
-
-    # using ema and (resistance and support levels)
-
-
-    top_stocks_ema['Price_Change'] = top_stocks_ema.groupby('Symbol')['Close'].transform(lambda x: x.pct_change())
-
-    # Generate a sell signal when the price starts to decrease after reaching the resistance level. Also buy when price of stocks falls under or equals support level and starts to see an increase 
-    top_stocks_ema['Confirmed_Buy_Signal'] = ((top_stocks_ema['Close'].shift(1) <= top_stocks_ema['Support_Level'].shift(1)) & (top_stocks_ema['Price_Change'] > 0))
-    top_stocks_ema['Confirmed_Sell_Signal'] = ((top_stocks_ema['Close'].shift(1) >= top_stocks_ema['Resistance_Level'].shift(1)) & (top_stocks_ema['Price_Change'] < 0))
-    Confirmed_Buy_Signal=top_stocks_ema[top_stocks_ema['Confirmed_Buy_Signal'] ]
-    Confirmed_Sell_Signal=top_stocks_ema[top_stocks_ema['Confirmed_Sell_Signal']]
-
-    print(time.time()-start_time,' seconds to finish\n')   
+    yearly_historic_df['Date'] = pd.to_datetime(yearly_historic_df['Date'], utc=True).dt.tz_convert(None)
+    yearly_historic_df.sort_values(by=['Symbol', 'Date'], inplace=True)
+    yearly_historic_df.loc[:, 'Price_Change'] = yearly_historic_df.groupby('Symbol')['Close'].transform(lambda x: x.pct_change())
+    yearly_historic_df.loc[:, 'Support_Level'] = yearly_historic_df.groupby('Symbol')['Low'].transform(lambda x: x.rolling(window=50).min())
+    yearly_historic_df.loc[:, 'Resistance_Level'] = yearly_historic_df.groupby('Symbol')['High'].transform(lambda x: x.rolling(window=50).max())
+    yearly_historic_df['50_EMA'] = yearly_historic_df.groupby('Symbol')['Close'].transform(lambda x: x.ewm(span=50, adjust=False).mean())
+    yearly_historic_df.dropna(subset=['50_EMA', 'Support_Level', 'Resistance_Level', 'Price_Change'], inplace=True)
     
-    Confirmed_Buy_Signal.to_csv('Confirmed_Buy_Signal')
-    Confirmed_Sell_Signal.to_csv('Confirmed_Sell_Signal')
-     
+    top_stocks_ema=yearly_historic_df.copy()
+    # Generate buy, sell and hold signals
+    top_stocks_ema.loc[:, 'Decisions'] = 'Hold'  # default to 'Hold'
+    top_stocks_ema.loc[((top_stocks_ema['Close'] > top_stocks_ema['50_EMA']) & (top_stocks_ema['Close'].shift(1) < top_stocks_ema['50_EMA'].shift(1))) & ((top_stocks_ema['Close'].shift(1) <= top_stocks_ema['Support_Level'].shift(1)) & (top_stocks_ema['Price_Change'] > 0)), 'Decisions'] = 'Buy'
+    top_stocks_ema.loc[((top_stocks_ema['Close'] < top_stocks_ema['50_EMA']) & (top_stocks_ema['Close'].shift(1) > top_stocks_ema['50_EMA'].shift(1))) & ((top_stocks_ema['Close'].shift(1) >= top_stocks_ema['Resistance_Level'].shift(1)) & (top_stocks_ema['Price_Change'] < 0)), 'Decisions'] = 'Sell'
+
+
+    top_stocks_ema.to_csv('training_dataset.csv',index=False)
+
+
 '''
 Exponential Moving Average (EMA) crossovers. In this case, a 50-day EMA is used. The EMA is a type of moving average that gives more weight to recent prices, which can make it more responsive to new information compared to a Simple Moving Average (SMA).
 

@@ -1,51 +1,51 @@
 ,stock_symbol,stock_url,stock_name
-0,CANN.CN,/quote/CANN.CN,Heritage Cannabis Holdings Corp.
-1,ENBI.CN,/quote/ENBI.CN,Entheon Biomedical Corp.
-2,DCNN.CN,/quote/DCNN.CN,Digicann Ventures Inc.
-3,WCE.V,/quote/WCE.V,WesCan Energy Corp.
-4,ZEU.CN,/quote/ZEU.CN,ZeU Technologies Inc.
-5,CME.CN,/quote/CME.CN,Canadian Metals Inc.
-6,RG.V,/quote/RG.V,Romios Gold Resources Inc.
-7,GYM.V,/quote/GYM.V,TUT Fitness Group Inc.
-8,SASY.CN,/quote/SASY.CN,Sassy Gold Corp.
-9,FLYN.V,/quote/FLYN.V,Flying Nickel Mining Corp.
-10,CN.V,/quote/CN.V,Condor Resources Inc.
-11,CHS.V,/quote/CHS.V,"Comprehensive Healthcare Systems, Inc."
-12,PDFI.CN,/quote/PDFI.CN,Prophecy DeFi Inc.
-13,TAJ.V,/quote/TAJ.V,Tajiri Resources Corp.
-14,SGC.V,/quote/SGC.V,Solstice Gold Corp.
-15,EDGM.CN,/quote/EDGM.CN,Edgemont Gold Corp.
-16,BRAU.V,/quote/BRAU.V,Big Ridge Gold Corp.
-17,AYR-WTU.CN,/quote/AYR-WTU.CN,
-18,MNRG.V,/quote/MNRG.V,Monumental Energy Corp.
-19,MUR.V,/quote/MUR.V,Murchison Minerals Ltd.
-20,AUMN.TO,/quote/AUMN.TO,Golden Minerals Company
-21,SOP-H.V,/quote/SOP-H.V,SOPerior Fertilizer Corp.
-22,SMC.TO,/quote/SMC.TO,Sulliden Mining Capital Inc.
-23,SGZ.V,/quote/SGZ.V,Sego Resources Inc.
-24,AUU.V,/quote/AUU.V,Gold79 Mines Ltd.
-25,CANN.CN,/quote/CANN.CN,Heritage Cannabis Holdings Corp.
-26,ENBI.CN,/quote/ENBI.CN,Entheon Biomedical Corp.
-27,DCNN.CN,/quote/DCNN.CN,Digicann Ventures Inc.
-28,WCE.V,/quote/WCE.V,WesCan Energy Corp.
-29,ZEU.CN,/quote/ZEU.CN,ZeU Technologies Inc.
-30,CME.CN,/quote/CME.CN,Canadian Metals Inc.
-31,RG.V,/quote/RG.V,Romios Gold Resources Inc.
-32,GYM.V,/quote/GYM.V,TUT Fitness Group Inc.
-33,SASY.CN,/quote/SASY.CN,Sassy Gold Corp.
-34,FLYN.V,/quote/FLYN.V,Flying Nickel Mining Corp.
-35,CN.V,/quote/CN.V,Condor Resources Inc.
-36,CHS.V,/quote/CHS.V,"Comprehensive Healthcare Systems, Inc."
-37,PDFI.CN,/quote/PDFI.CN,Prophecy DeFi Inc.
-38,TAJ.V,/quote/TAJ.V,Tajiri Resources Corp.
-39,SGC.V,/quote/SGC.V,Solstice Gold Corp.
-40,EDGM.CN,/quote/EDGM.CN,Edgemont Gold Corp.
-41,BRAU.V,/quote/BRAU.V,Big Ridge Gold Corp.
-42,AYR-WTU.CN,/quote/AYR-WTU.CN,
-43,MNRG.V,/quote/MNRG.V,Monumental Energy Corp.
-44,MUR.V,/quote/MUR.V,Murchison Minerals Ltd.
-45,AUMN.TO,/quote/AUMN.TO,Golden Minerals Company
-46,SOP-H.V,/quote/SOP-H.V,SOPerior Fertilizer Corp.
-47,SMC.TO,/quote/SMC.TO,Sulliden Mining Capital Inc.
-48,SGZ.V,/quote/SGZ.V,Sego Resources Inc.
-49,AUU.V,/quote/AUU.V,Gold79 Mines Ltd.
+0,TEMP.CN,/quote/TEMP.CN,Tempus Capital Inc.
+1,JHC.V,/quote/JHC.V,Jinhua Capital Corporation
+2,AFF.CN,/quote/AFF.CN,Affinity Metals Corp.
+3,FCO-H.V,/quote/FCO-H.V,FABLED SILVER GOLD CORP
+4,HBK.V,/quote/HBK.V,Highbank Resources Ltd.
+5,VENI.CN,/quote/VENI.CN,Vencanna Ventures Inc.
+6,NUG.V,/quote/NUG.V,NuLegacy Gold Corporation
+7,SILV.V,/quote/SILV.V,Silver Valley Metals Corp.
+8,MASS.V,/quote/MASS.V,Masivo Silver Corp.
+9,TRYP.CN,/quote/TRYP.CN,Tryp Therapeutics Inc.
+10,KLX.V,/quote/KLX.V,Carbon Done Right Developments Inc.
+11,DMED.CN,/quote/DMED.CN,Diagnamed Holdings Corp.
+12,NBR.V,/quote/NBR.V,Nubian Resources Ltd.
+13,GGA.V,/quote/GGA.V,Goldgroup Mining Inc.
+14,LOT.V,/quote/LOT.V,TomaGold Corporation
+15,FNR.V,/quote/FNR.V,49 North Resources Inc.
+16,SPAI.CN,/quote/SPAI.CN,Sparc Al Inc
+17,BZ.V,/quote/BZ.V,Benz Mining Corp.
+18,KAPA.V,/quote/KAPA.V,Kapa Gold Inc.
+19,REE.V,/quote/REE.V,E-Tech Resources Inc.
+20,EGT.V,/quote/EGT.V,Eguana Technologies Inc.
+21,QCX.V,/quote/QCX.V,QcX Gold Corp.
+22,PGDC.V,/quote/PGDC.V,Patagonia Gold Corp.
+23,SDR.V,/quote/SDR.V,Stroud Resources Ltd.
+24,YNV.V,/quote/YNV.V,Ynvisible Interactive Inc.
+25,TEMP.CN,/quote/TEMP.CN,Tempus Capital Inc.
+26,JHC.V,/quote/JHC.V,Jinhua Capital Corporation
+27,AFF.CN,/quote/AFF.CN,Affinity Metals Corp.
+28,FCO-H.V,/quote/FCO-H.V,FABLED SILVER GOLD CORP
+29,HBK.V,/quote/HBK.V,Highbank Resources Ltd.
+30,VENI.CN,/quote/VENI.CN,Vencanna Ventures Inc.
+31,NUG.V,/quote/NUG.V,NuLegacy Gold Corporation
+32,SILV.V,/quote/SILV.V,Silver Valley Metals Corp.
+33,MASS.V,/quote/MASS.V,Masivo Silver Corp.
+34,TRYP.CN,/quote/TRYP.CN,Tryp Therapeutics Inc.
+35,KLX.V,/quote/KLX.V,Carbon Done Right Developments Inc.
+36,DMED.CN,/quote/DMED.CN,Diagnamed Holdings Corp.
+37,NBR.V,/quote/NBR.V,Nubian Resources Ltd.
+38,GGA.V,/quote/GGA.V,Goldgroup Mining Inc.
+39,LOT.V,/quote/LOT.V,TomaGold Corporation
+40,FNR.V,/quote/FNR.V,49 North Resources Inc.
+41,SPAI.CN,/quote/SPAI.CN,Sparc Al Inc
+42,BZ.V,/quote/BZ.V,Benz Mining Corp.
+43,KAPA.V,/quote/KAPA.V,Kapa Gold Inc.
+44,REE.V,/quote/REE.V,E-Tech Resources Inc.
+45,EGT.V,/quote/EGT.V,Eguana Technologies Inc.
+46,QCX.V,/quote/QCX.V,QcX Gold Corp.
+47,PGDC.V,/quote/PGDC.V,Patagonia Gold Corp.
+48,SDR.V,/quote/SDR.V,Stroud Resources Ltd.
+49,YNV.V,/quote/YNV.V,Ynvisible Interactive Inc.
