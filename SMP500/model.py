@@ -30,6 +30,3 @@ def model_analysis():
         print("Train Score: ",train_score,'\n')
         print("Validation Score: ",valid_score,'\n')
     
-
-
-# model_analysis()
