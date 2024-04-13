@@ -11,3 +11,25 @@
 5.Risk Management and Strategy Implementation: • Implementing risk management strategies to minimize potential losses and optimize trading performance. This could involve applying various risk management techniques discussed in class. • Implementing trading strategies based on the insights gained from data analysis and machine learning models. This involves understanding different trading strategies discussed in class and implementing them effectively.
 
 6.Evaluation and Communication: • Evaluating the performance of the trading bot using backtesting and other evaluation metrics. • Communicating the results and findings effectively, which includes visualization of data and results. This involves skills learned in the "Communicating" module.
+
+S&P500:
+
+Running Instructions: All programs are already laid out ready to run in the main. 
+Everything will run in sequence with this basic command.
+
+python3 SMP500/main_smp500.py
+
+Required libraries:
+    selenium
+    webdriver_manager
+    bs4
+    pandas
+    time
+    yfinance
+    matplotlib
+    scikit-learn
+
+The expected files it will produce will be in this order:
+1. dataset_smp500.csv
+2. raw_yearly_yahoow_finance.csv
+3. decisions.csv

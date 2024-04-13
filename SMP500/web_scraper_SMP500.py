@@ -1,15 +1,12 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
 import requests
 from bs4 import BeautifulSoup as bs
 import pandas as pd
 import time
 
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.options import Options
 
 chrome_options = Options()
 chrome_options.add_argument('--headless')
@@ -21,10 +18,9 @@ chrome_options.add_argument('--remote-debugging-port=9222')  # Optional, for deb
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
 
-
 def scrape():
     values_list = []
-    # Use the global driver instance
+
     global driver
     driver.get("https://www.slickcharts.com/sp500")
     time.sleep(5) 

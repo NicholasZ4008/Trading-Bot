@@ -12,7 +12,5 @@ def main():
     model_analysis()
     moving_average_plot()
     
-    
-    
 if __name__=='__main__':
     main()
