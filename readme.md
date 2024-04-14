@@ -50,8 +50,7 @@ Our project automates the extraction and analysis of financial data to inform tr
 # Order of Execution and How to Run:
 ## Top_Gaining_Stocks:
  ### main.py file:
-	 ![image](https://github.com/AdamBahramiSchool/Trading-Bot/assets/145634016/9968a4e1-7aae-454d-86d6-5f47ecaa39f9)
-
+ 
 Once in the Trading-Bot root directory, cd into the Top_Gaining_Stocks directory and in the terminal, run command ‘***python3 main.py***’
 ## SMP500:
  ### main_smp500.py file:
