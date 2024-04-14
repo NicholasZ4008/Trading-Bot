@@ -94,5 +94,5 @@ Prediction of "Buy, Sell or Hold" will occur in terminal command line
 Warning: These can be uncommented and tested, but might pose problems. 
 
 Uncomments can be done like this:
-In Top_Gaining_Stocks, go to main.py and uncomment values_list, stock_df, stock_df.to_csv and getting_gaining_stocks() to webscrape. \
-In SMP500, go to main_smp500.py, uncomment raw, smp500_df and smp500_df.to_csv to webscrape
+1. In Top_Gaining_Stocks, go to main.py and uncomment values_list, stock_df, stock_df.to_csv and getting_gaining_stocks() to webscrape. \
+2. In SMP500, go to main_smp500.py, uncomment raw, smp500_df and smp500_df.to_csv to webscrape
