@@ -55,7 +55,7 @@ Our project automates the extraction and analysis of financial data to inform tr
 Once in the Trading-Bot root directory, cd into the Top_Gaining_Stocks directory and in the terminal, run command ‘python3 main.py’
 ## S&P500:
  ### main_smp500.py file:
- 	![smpmainpic](https://github.com/AdamBahramiSchool/Trading-Bot/assets/145634016/18c1ffd1-b644-4f12-9ac4-f46f2db2ed5e)
+ 	![alt text](https://github.com/[AdamBahramiSchool]/[Trading-Bot]/blob/[SMP500]/readme_images/smpmainpic.png?raw=true)
 
 Once in the Trading-Bot root directory, cd into the S&P500 directory and in the terminal, run command ‘python3 main_smp500.py’
 
