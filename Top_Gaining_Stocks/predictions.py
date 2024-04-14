@@ -9,34 +9,21 @@ from sklearn.svm import SVC
 
 def predictor():
     training_data = pd.read_csv('training_dataset.csv')
-
-    # Prepare the target variable
     target_variable = training_data['Decisions']
-
-    # Drop 'Date' and 'Symbol' columns for training data
     training_data_filtered = training_data.drop(columns=['Date', 'Symbol', 'Decisions'])
-
-    # Split the data into training and test sets
     X_train, X_test, y_train, y_test = train_test_split(training_data_filtered, target_variable, test_size=0.2, random_state=42)
-
-    # Scale the features
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
-    X_test_scaled = scaler.transform(X_test)  # Use transform, not fit_transform
-
+    X_test_scaled = scaler.transform(X_test) 
     Logistic_Regression(X_train_scaled, y_train, X_test_scaled, y_test)
     Random_Forest_Classifier(X_train_scaled, y_train, X_test_scaled, y_test)
     Support_Vector_Machine(X_train_scaled, y_train, X_test_scaled, y_test)
-
-
-
 
 def Logistic_Regression(X_train_scaled,y_train,X_test_scaled, y_test):
     model = LogisticRegression(max_iter=1000)
     model.fit(X_train_scaled, y_train)
     y_pred = model.predict(X_test_scaled)
     accuracy = accuracy_score(y_test, y_pred)
-    # print("Accuracy of Logistic Regression Model:", accuracy)
     train_accuracy = model.score(X_train_scaled, y_train)
     test_accuracy = model.score(X_test_scaled, y_test)
     print("Training Accuracy of Logistic Regression:", train_accuracy)
@@ -48,7 +35,6 @@ def Random_Forest_Classifier(X_train_scaled,y_train,X_test_scaled, y_test):
     model.fit(X_train_scaled, y_train)
     y_pred=model.predict(X_test_scaled)
     accuracy=accuracy_score(y_test,y_pred)
-    # print("Accuracy of RandomForest classifier Model",accuracy)  
     train_accuracy = model.score(X_train_scaled, y_train)
     test_accuracy = model.score(X_test_scaled, y_test)
     print("Training Accuracy of Random Forest Classifier:", train_accuracy)
@@ -59,7 +45,6 @@ def Support_Vector_Machine(X_train_scaled,y_train,X_test_scaled, y_test):
     model.fit(X_train_scaled, y_train)
     y_pred=model.predict(X_test_scaled)
     accuracy=accuracy_score(y_test,y_pred)
-    # print("Accuracy of Support Vector Machine",accuracy)  
     train_accuracy = model.score(X_train_scaled, y_train)
     test_accuracy = model.score(X_test_scaled, y_test)
     print("Training Accuracy of Support Vector Machine:", train_accuracy)
