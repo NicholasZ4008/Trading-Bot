@@ -55,13 +55,12 @@ Our project automates the extraction and analysis of financial data to inform tr
 Once in the Trading-Bot root directory, cd into the Top_Gaining_Stocks directory and in the terminal, run command ‘***python3 main.py***’
 ## SMP500:
  ### main_smp500.py file:
- 	![alt text](https://github.com/[AdamBahramiSchool]/[Trading-Bot]/blob/[SMP500]/readme_images/smpmainpic.png?raw=true)
 
-Once in the Trading-Bot root directory, cd into the S&P500 directory and in the terminal, run command ‘***python3 main_smp500.py***’
+Once in the Trading-Bot root directory, cd into the S&P500 directory and in the terminal, run command ‘***python3 main_smp500.py***’. The way it's ordered in main is the order of execution.
 
 ## Note: Only run after having called main_smp500.py, as it trains classification model Decision Tree Classifier needed for stock_taker.py
 ### stock_taker.py file:
-Once in the Trading-Bot root directory, cd into the S&P500 directory and in the terminal, run command ‘***python3 stock_taker.py***’
+Once in the Trading-Bot root directory, cd into the S&P500 directory and in the terminal, run command ‘***python3 stock_taker.py***’.  The way it's ordered in main is the order of execution.
 ## Files produced/expected:
 ### Top_Gaining_Stocks:
 ***main.py*** file:
@@ -85,6 +84,7 @@ Model scores will appear in terminal command line \
 Prediction of "Buy, Sell or Hold" will occur in terminal command line
 ## Video of Full execution: 
 
+https://www.youtube.com/watch?v=WgSFnwCOer8
 
 # ***Note: 
 1. In the current code we commented out the webscraping functions and left the latest preprocessed webscraped datasets right before the deadline, as SFU's network brings complications when trying to do the HTTP requests due to IP limitations. Furthermore, there's a lot of compatability issues that arise with Selenium, therefore for a clean execution, we commented out the webscraping. However, in our video of execution, we show us webscraping the datasets, and further using them for our data analysis.
