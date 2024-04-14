@@ -45,3 +45,36 @@ Our project automates the extraction and analysis of financial data to inform tr
  &emsp; from selenium import webdriver  # import selenium webdriver \
  &emsp; from webdriver_manager.chrome import ChromeDriverManager  # managing Chrome driver with webdriver_manager. Used for selenium \
  &emsp; import yfinance as yf  # standard import for yfinance 
+
+
+# Order of Execution and How to Run:
+## Top_Gaining_Stocks:
+### main.py file:
+	 
+Once in the Trading-Bot root directory, cd into the Top_Gaining_Stocks directory and in the terminal, run command ‘python3 main.py’
+## S&P500:
+ ### main_smp500.py file:
+ 
+Once in the Trading-Bot root directory, cd into the S&P500 directory and in the terminal, run command ‘python3 main_smp500.py’
+
+
+## Files produced/expected:
+### Top_Gaining_Stocks:
+1. dataset.csv \
+2. filtered_profit_margin_plot.png \
+3. Volume_traded_true_state.png \
+4. gaining_stocks.csv \
+5. training_dataset.csv \
+Model scores will appear in terminal command line 
+
+### SMP500:
+1. dataset_smp500.csv \
+2. raw_yearly_yahoow_finance.csv \
+3. decisions.csv \
+4. appl_stock_and_ma.png \
+Model scores will appear in terminal command line 
+
+## Video of Full execution: 
+
+
+
