@@ -32,8 +32,8 @@ Our project automates the extraction and analysis of financial data to inform tr
  &emsp; pandas==2.2.2 \
  &emsp; Requests==2.31.0 \
  &emsp; scikit_learn==1.4.1.post1 \
- &emsp; selenium==4.19.0 
- \ &emsp; webdriver_manager==4.0.1 \
+ &emsp; selenium==4.19.0 \
+ &emsp; webdriver_manager==4.0.1 \
  &emsp; yfinance==0.2.37 
 
 **Import Statements** \
@@ -60,18 +60,18 @@ Once in the Trading-Bot root directory, cd into the S&P500 directory and in the 
 
 ## Files produced/expected:
 ### Top_Gaining_Stocks:
-1. dataset.csv \
-2. filtered_profit_margin_plot.png \
-3. Volume_traded_true_state.png \
-4. gaining_stocks.csv \
-5. training_dataset.csv \
+1. dataset.csv 
+2. filtered_profit_margin_plot.png 
+3. Volume_traded_true_state.png 
+4. gaining_stocks.csv 
+5. training_dataset.csv 
 Model scores will appear in terminal command line 
 
 ### SMP500:
-1. dataset_smp500.csv \
-2. raw_yearly_yahoow_finance.csv \
-3. decisions.csv \
-4. appl_stock_and_ma.png \
+1. dataset_smp500.csv 
+2. raw_yearly_yahoow_finance.csv 
+3. decisions.csv 
+4. appl_stock_and_ma.png 
 Model scores will appear in terminal command line 
 
 ## Video of Full execution: 
