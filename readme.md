@@ -79,4 +79,9 @@ Model scores will appear in terminal command line
 ## Video of Full execution: 
 
 
+### ***Note***: 
+1. In the current code we commented out the webscraping functions and left the latest preprocessed webscraped datasets right before the deadline, as SFU's network brings compilations when trying to do the HTTP requests due to IP limitations. Furthermore, there's a lot of compatability issues that arise with Selenium, therefore for a clean execution, we commented out the webscraping. However, in our video of execution, we show us webscraping the datasets, and further using them for our data analysis.
 
+2. Furthermore, for our S&P500 models, we also commented out the MLPClassifier model as it takes more 5-10 minutes to execute. However, we show the results in our video of execution.
+
+Warning: These can be uncommented and tested, but might pose problems. 
