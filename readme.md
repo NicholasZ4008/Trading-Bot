@@ -59,9 +59,8 @@ Once in the Trading-Bot root directory, cd into the Top_Gaining_Stocks directory
 
 Once in the Trading-Bot root directory, cd into the S&P500 directory and in the terminal, run command ‘***python3 main_smp500.py***’
 
+## Note: Only run after having called main_smp500.py, as it trains classification model Decision Tree Classifier needed for stock_taker.py
 ### stock_taker.py file:
-	![alt text](https://github.com/[AdamBahramiSchool]/[Trading-Bot]/blob/[SMP500]/readme_images/smpmainpic.png?raw=true)
- 
 Once in the Trading-Bot root directory, cd into the S&P500 directory and in the terminal, run command ‘***python3 stock_taker.py***’
 ## Files produced/expected:
 ### Top_Gaining_Stocks:
