@@ -92,3 +92,7 @@ Prediction of "Buy, Sell or Hold" will occur in terminal command line
 2. Furthermore, for our S&P500 models, we also commented out the MLPClassifier model as it takes more 5-10 minutes to execute. However, we show the results in our video of execution.
 
 Warning: These can be uncommented and tested, but might pose problems. 
+
+Uncomments can be done like this:
+In Top_Gaining_Stocks, go to main.py and uncomment values_list, stock_df, stock_df.to_csv and getting_gaining_stocks() to webscrape. \
+In SMP500, go to main_smp500.py, uncomment raw, smp500_df and smp500_df.to_csv to webscrape
