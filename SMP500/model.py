@@ -6,28 +6,23 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import train_test_split
 import pandas as pd
 
+# Uncomment MLP to test out MLPClassifier model
+
 def model_analysis(use_only_dtc=False):
-    # Load data and remove any rows with missing values
     data = pd.read_csv('decisions.csv').dropna()
 
-    # Check for and drop 'Unnamed: 0' if it exists
     if 'Unnamed: 0' in data.columns:
         data.drop(columns=['Unnamed: 0'], inplace=True)
 
     # Drop other non-feature columns
     X = data.drop(columns=['decision', 'Date', 'Symbol'])
     y = data['decision']
-
-    # Split the data into training and validation sets
     X_train, X_valid, y_train, y_valid = train_test_split(X, y, test_size=0.25)
-
-    # Define the pipelines for each classifier
     pipelines = {
         "RandomForest": make_pipeline(StandardScaler(), RandomForestClassifier(n_estimators=100)),
-        "DecisionTree": make_pipeline(StandardScaler(), DecisionTreeClassifier())
+        "DecisionTree": make_pipeline(StandardScaler(), DecisionTreeClassifier()),
+        # "MLP": make_pipeline(StandardScaler(), MLPClassifier(max_iter=1000))
     }
-
-    # Fit each pipeline and optionally print scores
     for name, pipeline in pipelines.items():
         if use_only_dtc and name != "DecisionTree":
             continue
@@ -43,5 +38,4 @@ def model_analysis(use_only_dtc=False):
         return pipelines["DecisionTree"]
     return pipelines
 
-# Call the function to execute
-# model_analysis()
+

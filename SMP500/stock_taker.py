@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from model import model_analysis
 stock_symbol = input("Enter Stock Symbol: ")
-print('Webscraping:', stock_symbol)
+print('Loading Details:', stock_symbol)
 stock = yf.Ticker(stock_symbol)
 history_one_year = stock.history(period='1y')
 if history_one_year.empty:
