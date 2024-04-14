@@ -1,5 +1,5 @@
 # Project Description:
-Our project automates the extraction and analysis of financial data to inform trading decisions. It begins by web scraping the top gaining and S&P 500 stocks from Yahoo Finance, capturing essential market dynamics. The data is then enhanced through the calculation of key technical indicators such as exponential moving averages, support and resistance levels, and incorporating fundamental attributes like open, close, high, low prices, volume, and price changes. These features serve as the foundation for training specialized classification models. For the highly volatile top gaining stocks, our models predict "Buy", "Sell", or "Hold" actions. For the more stable S&P 500 stocks, the models classify the stocks' movements as "Raising", "Falling", or "Stagnant". This dual approach allows for tailored strategies that address the distinct characteristics of each stock category, providing targeted insights for investors and traders alike.
+Our project automates the extraction and analysis of financial data to inform trading decisions. It begins by web scraping the top gaining and S&P 500 stocks from Yahoo Finance, capturing essential market dynamics. The data is then enhanced through the calculation of key technical indicators such as exponential moving averages, support and resistance levels, and incorporating fundamental attributes like open, close, high, low prices, volume, and price changes. These features serve as the foundation for training specialized classification models. For the highly volatile top gaining stocks, our models predict "Buy", "Sell", or "Hold" actions. For the more stable S&P 500 stocks, the models classify the stocks' movements as "Raising", "Falling", or "Stagnant". This dual approach allows for tailored strategies that address the distinct characteristics of each stock category, providing targeted insights for investors and traders alike. Once we've trained our S&P 500 classification models, we take in the user input stock symbol and use the decision classifier trained model and make a prediction on whether the stock will "Raise", "Fall" or stay "Stagnant" during that current day (All dependent on the closing price and 50 day moving average). 
 
 # Required Libraries:
 ### **Top_Gaining_Stocks:**
@@ -25,7 +25,7 @@ Our project automates the extraction and analysis of financial data to inform tr
  &emsp; from statsmodels.nonparametric.smoothers_lowess import lowess \
  &emsp; import yfinance as yf  # standard import for yfinance to fetch financial data 
 
-### **S&P500:**
+### **SMP500:**
  &emsp; **Dependencies** \
  &emsp; beautifulsoup4==4.12.3 \
  &emsp; matplotlib==3.8.2 \
@@ -49,19 +49,22 @@ Our project automates the extraction and analysis of financial data to inform tr
 
 # Order of Execution and How to Run:
 ## Top_Gaining_Stocks:
-### main.py file:
+ ### main.py file:
 	 ![image](https://github.com/AdamBahramiSchool/Trading-Bot/assets/145634016/9968a4e1-7aae-454d-86d6-5f47ecaa39f9)
 
-Once in the Trading-Bot root directory, cd into the Top_Gaining_Stocks directory and in the terminal, run command ‘python3 main.py’
-## S&P500:
+Once in the Trading-Bot root directory, cd into the Top_Gaining_Stocks directory and in the terminal, run command ‘***python3 main.py***’
+## SMP500:
  ### main_smp500.py file:
  	![alt text](https://github.com/[AdamBahramiSchool]/[Trading-Bot]/blob/[SMP500]/readme_images/smpmainpic.png?raw=true)
 
-Once in the Trading-Bot root directory, cd into the S&P500 directory and in the terminal, run command ‘python3 main_smp500.py’
+Once in the Trading-Bot root directory, cd into the S&P500 directory and in the terminal, run command ‘***python3 main_smp500.py***’
 
-
+## Note: Only run after having called main_smp500.py, as it trains classification model Decision Tree Classifier needed for stock_taker.py
+### stock_taker.py file:
+Once in the Trading-Bot root directory, cd into the S&P500 directory and in the terminal, run command ‘***python3 stock_taker.py***’
 ## Files produced/expected:
 ### Top_Gaining_Stocks:
+***main.py*** file:
 1. dataset.csv 
 2. filtered_profit_margin_plot.png 
 3. Volume_traded_true_state.png 
@@ -70,12 +73,16 @@ Once in the Trading-Bot root directory, cd into the S&P500 directory and in the 
 Model scores will appear in terminal command line 
 
 ### SMP500:
+***main_smp500.py*** file:
 1. dataset_smp500.csv 
 2. raw_yearly_yahoow_finance.csv 
 3. decisions.csv 
 4. appl_stock_and_ma.png 
-Model scores will appear in terminal command line 
+Model scores will appear in terminal command line \
 
+***stock_taker.py*** file:
+1. {stock_symbol}_Stock_Price_and_SMA.png \
+Prediction of "Buy, Sell or Hold" will occur in terminal command line
 ## Video of Full execution: 
 
 
