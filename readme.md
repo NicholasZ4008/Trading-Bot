@@ -25,7 +25,7 @@ Our project automates the extraction and analysis of financial data to inform tr
  &emsp; from statsmodels.nonparametric.smoothers_lowess import lowess \
  &emsp; import yfinance as yf  # standard import for yfinance to fetch financial data 
 
-### **S&P500:**
+### **SMP500:**
  &emsp; **Dependencies** \
  &emsp; beautifulsoup4==4.12.3 \
  &emsp; matplotlib==3.8.2 \
@@ -53,7 +53,7 @@ Our project automates the extraction and analysis of financial data to inform tr
 	 ![image](https://github.com/AdamBahramiSchool/Trading-Bot/assets/145634016/9968a4e1-7aae-454d-86d6-5f47ecaa39f9)
 
 Once in the Trading-Bot root directory, cd into the Top_Gaining_Stocks directory and in the terminal, run command ‘***python3 main.py***’
-## S&P500:
+## SMP500:
  ### main_smp500.py file:
  	![alt text](https://github.com/[AdamBahramiSchool]/[Trading-Bot]/blob/[SMP500]/readme_images/smpmainpic.png?raw=true)
 
