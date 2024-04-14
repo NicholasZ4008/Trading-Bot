@@ -79,6 +79,7 @@ Model scores will appear in terminal command line
 3. decisions.csv 
 4. appl_stock_and_ma.png 
 Model scores will appear in terminal command line \
+
 ***stock_taker.py*** file:
 1. {stock_symbol}_Stock_Price_and_SMA.png
 Prediction of "Buy, Sell or Hold" will occur in terminal command line
