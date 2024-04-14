@@ -1,0 +1,19 @@
+beautifulsoup4==4.12.3
+matplotlib==3.8.2
+numpy==1.26.4
+pandas==2.2.2
+pykalman_py311_update==0.9.6
+Requests==2.31.0
+scikit_learn==1.4.1.post1
+statsmodels==0.14.1
+yfinance==0.2.37
+
+from bs4 import BeautifulSoup  # for parsing HTML and XML documents
+import matplotlib.pyplot as plt  # typical import for plotting with matplotlib
+import numpy as np  # standard import for NumPy
+import pandas as pd  # standard import for pandas
+from pykalman import KalmanFilter  # importing KalmanFilter if using pykalman
+import requests  # for making HTTP requests
+from sklearn import datasets, linear_model  # example imports from scikit-learn
+from statsmodels.nonparametric.smoothers_lowess import lowess
+import yfinance as yf  # standard import for yfinance to fetch financial data
