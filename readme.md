@@ -96,5 +96,3 @@ Uncomments can be done like this:
 1. In Top_Gaining_Stocks, go to main.py and uncomment values_list, stock_df, stock_df.to_csv and getting_gaining_stocks() to webscrape. \
 2. In SMP500, go to main_smp500.py, uncomment raw, smp500_df and smp500_df.to_csv to webscrape
 
-# ***Contributions:
-We both did equal amounts of work, we did pair programming and worked with each other in person, a lot of nza's changes were local, so the commits don't say much. This project was 50/50
